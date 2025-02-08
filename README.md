@@ -10,4 +10,4 @@ Source files for the Tuts+ tutorial: [Creating Isometric Worlds - Primer for Gam
 
 **Available on Tuts+ 31 March, 2017**
 
-View the demo at [this jsfiddle](https://jsfiddle.net/juwalbose/w1tnu9qc/)
+View the demo at [this supertren jsfiddle](https://jsfiddle.net/supertren/Lhpwmk46/7/)
