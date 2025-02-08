@@ -1,5 +1,3 @@
-/*global Phaser*/
-
 var game = new Phaser.Game(600, 400, Phaser.AUTO, 'TutContainer', { preload: preload, create: create, update:update });
 var upKey;
 var downKey;
@@ -9,8 +7,8 @@ var rightKey;
 var levelData=
 [[1,1,1,1,1,1],
 [1,0,0,0,0,1],
-[1,0,1,0,0,1],
-[1,0,0,2,0,1],
+[1,0,1,2,0,1],
+[1,0,0,0,0,1],
 [1,0,0,0,0,1],
 [1,1,1,1,1,1]];
 //x & y values of the direction vector for character movement
@@ -43,20 +41,21 @@ var heroSpeed=1.2;//well, speed of our hero
 
 
 function preload() {
+		game.load.crossOrigin='Anonymous';
     //load all necessary assets
-    game.load.bitmapFont('font', 'assets/font.png', 'assets/font.xml');
-    game.load.image('greenTile', 'assets/green_tile.png');
-    game.load.image('redTile', 'assets/red_tile.png');
-    game.load.image('heroTile', 'assets/hero_tile.png');
-    game.load.image('heroShadow', 'assets/ball_shadow.png');
-    game.load.image('floor', 'assets/floor.png');
-    game.load.image('wall', 'assets/block.png');
-    game.load.image('ball', 'assets/ball.png');
-    game.load.atlasJSONArray('hero', 'assets/hero_8_4_41_62.png', 'assets/hero_8_4_41_62.json');
+    game.load.bitmapFont('font', 'https://dl.dropboxusercontent.com/s/z4riz6hymsiimam/font.png?dl=0', 'https://dl.dropboxusercontent.com/s/7caqsovjw5xelp0/font.xml?dl=0');
+    game.load.image('greenTile', 'https://dl.dropboxusercontent.com/s/nxs4ptbuhrgzptx/green_tile.png?dl=0');
+    game.load.image('redTile', 'https://dl.dropboxusercontent.com/s/zhk68fq5z0c70db/red_tile.png?dl=0');
+    game.load.image('heroTile', 'https://dl.dropboxusercontent.com/s/8b5zkz9nhhx3a2i/hero_tile.png?dl=0');
+    game.load.image('heroShadow', 'https://dl.dropboxusercontent.com/s/sq6deec9ddm2635/ball_shadow.png?dl=0');
+    game.load.image('floor', 'https://dl.dropboxusercontent.com/s/h5n5usz8ejjlcxk/floor.png?dl=0');
+    game.load.image('wall', 'https://dl.dropboxusercontent.com/s/uhugfdq1xcwbm91/block.png?dl=0');
+    game.load.image('ball', 'https://dl.dropboxusercontent.com/s/pf574jtx7tlmkj6/ball.png?dl=0');
+    game.load.atlasJSONArray('hero', 'https://dl.dropboxusercontent.com/s/hradzhl7mok1q25/hero_8_4_41_62.png?dl=0', 'https://dl.dropboxusercontent.com/s/95vb0e8zscc4k54/hero_8_4_41_62.json?dl=0');
 }
 
 function create() {
-    bmpText = game.add.bitmapText(10, 10, 'font', 'Isometric Tutorial', 18);
+    bmpText = game.add.bitmapText(10, 10, 'font', 'Isometric Tutorial\nUse Arrow Keys', 18);
     normText=game.add.text(10,360,"hi");
     upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
     downKey = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
